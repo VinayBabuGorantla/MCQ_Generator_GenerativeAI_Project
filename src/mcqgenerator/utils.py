@@ -1,7 +1,7 @@
 import os
 import json
 import pandas as pd
-import traceback
+#import traceback
 import PyPDF2  # Assuming PyPDF2 is imported
 
 def read_file(file):
