@@ -3,7 +3,7 @@ import json
 import pandas as pd
 import traceback
 from dotenv import load_dotenv
-from src.mcqgenerator.utils import read_file,get_data_table
+from src.mcqgenerator.utils import read_file,get_table_data
 from src.mcqgenerator.logger import logging
 
 
@@ -50,7 +50,9 @@ Quiz_MCQs:
 Check from an expert English Writer of the above quiz:
 """
 
-quiz_evaluation_prompt=PromptTemplate(input_variables=["subject", "quiz"], template=TEMPLATE)
+quiz_evaluation_prompt=PromptTemplate(
+    input_variables=["subject", "quiz"], 
+    template=TEMPLATE2)
 
 review_chain=LLMChain(llm=llm, prompt=quiz_evaluation_prompt, output_key="review", verbose=True)
 
